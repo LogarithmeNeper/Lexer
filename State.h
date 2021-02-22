@@ -1,4 +1,8 @@
+#pragma once 
+
 #include <string>
+#include "Automaton.h"
+#include "symbole.h"
 using namespace std;
 
 class State {
@@ -6,7 +10,7 @@ class State {
         State();
         State(string s);
         ~State();
-        virtual bool transition(Automaton &automaton, Symbol * symb) = 0;
+        virtual bool transition(Automaton &automaton, Symbole* symb) = 0;
     protected:
         string name;
 

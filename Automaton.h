@@ -1,3 +1,4 @@
+#pragma once
 #include "State.h"
 #include "symbole.h"
 #include "lexer.h"
@@ -11,7 +12,7 @@ class Automaton {
     public:
         Automaton(string s);
         ~Automaton();
-        void decalage(State state, Symbole s);
+        void decalage(State* state, Symbole s);
     protected:
         Lexer* lexer;
         stack<Symbole*> stackSymboles;

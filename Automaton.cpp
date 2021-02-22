@@ -2,5 +2,6 @@
 
 Automaton::Automaton(string s) {
     this->lexer = new Lexer(s);
-    this->stackStates.push(new State0());
+    State* currState = new State0();
+    this->stackStates.push(currState);
 }
