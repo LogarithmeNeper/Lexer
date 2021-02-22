@@ -12,5 +12,14 @@ void Automaton::decalage(Symbole* s, State* state) {
 }
 
 void Automaton::reduction(int i, Symbole* s) {
-    
+    stack<Symbole*> pile;
+    for(int j=0; j<i; ++j) {
+        this->stackStates.pop();
+        pile.push(this->stackSymboles.top()); // adds the top symbol to the stack...
+        this->stackSymboles.pop();  // ...then deletes the top symbol
+    }
+
+    int val;
+
+    // what to do next ?
 }
