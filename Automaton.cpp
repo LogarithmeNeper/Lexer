@@ -5,3 +5,8 @@ Automaton::Automaton(string s) {
     State* currState = new State0();
     this->stackStates.push(currState);
 }
+
+void Automaton::decalage(State* state, Symbole* s) {
+    this->stackStates.push(state);
+    this->stackSymboles.push(s);
+}
