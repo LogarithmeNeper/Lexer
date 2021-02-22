@@ -10,3 +10,7 @@ void Automaton::decalage(Symbole* s, State* state) {
     this->stackSymboles.push(s);
     this->stackStates.push(state);
 }
+
+void Automaton::reduction() {
+    // TODO
+}

@@ -13,6 +13,7 @@ class Automaton {
         Automaton(string s);
         ~Automaton();
         void decalage(Symbole* s, State* state);
+        void reduction();
     protected:
         Lexer* lexer;
         stack<Symbole*> stackSymboles;
