@@ -13,7 +13,7 @@ bool State0::transition(Automaton &automaton, Symbole * s) {
 }
 
 bool State1::transition(Automaton &automaton, Symbole * s) {
-    switch(*s) {:
+    switch(*s) {
         case PLUS:
             automaton.decalage(s, new State4);
             break;
