@@ -1,5 +1,4 @@
 #pragma once
-#include "state.h"
 #include "symbole.h"
 #include "lexer.h"
 #include <stack>
