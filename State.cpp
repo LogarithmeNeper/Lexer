@@ -14,6 +14,7 @@ bool State0::transition(Automaton &automaton, Symbole * s) {
         case FIN:
         case ERREUR: 
     }
+    return false;
 }
 
 bool State1::transition(Automaton &automaton, Symbole * s) {
@@ -27,9 +28,11 @@ bool State1::transition(Automaton &automaton, Symbole * s) {
             automaton.decalage(s, new State5);
             break;
         case INT:
-        case FIN: // TODO : Comment coder accepter ?
+        case FIN:
+            return true;
         case ERREUR: 
     }
+    return false;
 }
 
 bool State2::transition(Automaton &automaton, Symbole * s) {
@@ -46,6 +49,7 @@ bool State2::transition(Automaton &automaton, Symbole * s) {
         case FIN:
         case ERREUR: 
     }
+    return false;
 }
 
 bool State3::transition(Automaton &automaton, Symbole * s) {
@@ -66,6 +70,7 @@ bool State3::transition(Automaton &automaton, Symbole * s) {
             break;
         case ERREUR: 
     }
+    return false;
 }
 
 bool State4::transition(Automaton &automaton, Symbole * s) {
@@ -82,6 +87,7 @@ bool State4::transition(Automaton &automaton, Symbole * s) {
         case FIN:
         case ERREUR: 
     }
+    return false;
 }
 
 bool State5::transition(Automaton &automaton, Symbole * s) {
@@ -98,6 +104,7 @@ bool State5::transition(Automaton &automaton, Symbole * s) {
         case FIN:
         case ERREUR: 
     }
+    return false;
 }
 
 bool State6::transition(Automaton &automaton, Symbole * s) {
@@ -116,6 +123,7 @@ bool State6::transition(Automaton &automaton, Symbole * s) {
         case FIN:
         case ERREUR: 
     }
+    return false;
 }
 
 bool State7::transition(Automaton &automaton, Symbole * s) {
@@ -136,6 +144,7 @@ bool State7::transition(Automaton &automaton, Symbole * s) {
             break;
         case ERREUR: 
     }
+    return false;
 }
 
 bool State8::transition(Automaton &automaton, Symbole * s) {
@@ -156,6 +165,7 @@ bool State8::transition(Automaton &automaton, Symbole * s) {
             break;
         case ERREUR: 
     }
+    return false;
 }
 
 bool State9::transition(Automaton &automaton, Symbole * s) {
@@ -176,6 +186,7 @@ bool State9::transition(Automaton &automaton, Symbole * s) {
             break;
         case ERREUR: 
     }
+    return false;
 }
 
 State0::State0() {
