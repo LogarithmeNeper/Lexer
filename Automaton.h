@@ -12,7 +12,7 @@ class Automaton {
     public:
         Automaton(string s);
         ~Automaton();
-        void decalage(State* state, Symbole* s);
+        void decalage(Symbole* s, State* state);
     protected:
         Lexer* lexer;
         stack<Symbole*> stackSymboles;
