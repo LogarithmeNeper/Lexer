@@ -8,6 +8,7 @@ class State {
         ~State();
         virtual bool transition(Automaton &automaton, Symbol * symb) = 0;
     protected:
+        string name;
 
 };
 
