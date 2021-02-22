@@ -1,7 +1,7 @@
 #pragma once 
 
 #include <string>
-#include "Automaton.h"
+#include "automaton.h"
 #include "symbole.h"
 using namespace std;
 
