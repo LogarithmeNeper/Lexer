@@ -7,6 +7,7 @@ class State {
         State(string s);
         ~State();
     protected:
+        string name;
 
 };
 
