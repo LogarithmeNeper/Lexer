@@ -5,32 +5,23 @@ bool State0::transition(Automaton &automaton, Symbole * s) {
         case OPENPAR:
             automaton.decalage(s, new State2);
             break;
-        case CLOSEPAR:
-        case PLUS:
-        case MULT:
         case INT:
             automaton.decalage(s, new State3);
             break;
-        case FIN:
-        case ERREUR: 
     }
     return false;
 }
 
 bool State1::transition(Automaton &automaton, Symbole * s) {
-    switch(*s) {
-        case OPENPAR:
-        case CLOSEPAR:
+    switch(*s) {:
         case PLUS:
             automaton.decalage(s, new State4);
             break;
         case MULT:
             automaton.decalage(s, new State5);
             break;
-        case INT:
         case FIN:
             return true;
-        case ERREUR: 
     }
     return false;
 }
@@ -40,21 +31,15 @@ bool State2::transition(Automaton &automaton, Symbole * s) {
         case OPENPAR:
             automaton.decalage(s, new State2);
             break;
-        case CLOSEPAR:
-        case PLUS:
-        case MULT:
         case INT:
             automaton.decalage(s, new State3);
             break;
-        case FIN:
-        case ERREUR: 
     }
     return false;
 }
 
 bool State3::transition(Automaton &automaton, Symbole * s) {
     switch(*s) {
-        case OPENPAR:
         case CLOSEPAR:
             automaton.reduction(1, s);
             break;
@@ -64,11 +49,9 @@ bool State3::transition(Automaton &automaton, Symbole * s) {
         case MULT:
             automaton.reduction(1, s);
             break;
-        case INT:
         case FIN:
             automaton.reduction(1, s);
-            break;
-        case ERREUR: 
+            break; 
     }
     return false;
 }
@@ -78,14 +61,9 @@ bool State4::transition(Automaton &automaton, Symbole * s) {
         case OPENPAR:
             automaton.decalage(s, new State2);
             break;
-        case CLOSEPAR:
-        case PLUS:
-        case MULT:
         case INT:
             automaton.decalage(s, new State3);
             break;
-        case FIN:
-        case ERREUR: 
     }
     return false;
 }
@@ -95,21 +73,15 @@ bool State5::transition(Automaton &automaton, Symbole * s) {
         case OPENPAR:
             automaton.decalage(s, new State2);
             break;
-        case CLOSEPAR:
-        case PLUS:
-        case MULT:
         case INT:
             automaton.decalage(s, new State3);
             break;
-        case FIN:
-        case ERREUR: 
     }
     return false;
 }
 
 bool State6::transition(Automaton &automaton, Symbole * s) {
     switch(*s) {
-        case OPENPAR:
         case CLOSEPAR:
             automaton.decalage(s, new State9);
             break;
@@ -119,16 +91,12 @@ bool State6::transition(Automaton &automaton, Symbole * s) {
         case MULT:
             automaton.decalage(s, new State5);
             break;
-        case INT:
-        case FIN:
-        case ERREUR: 
     }
     return false;
 }
 
 bool State7::transition(Automaton &automaton, Symbole * s) {
     switch(*s) {
-        case OPENPAR:
         case CLOSEPAR:
             automaton.reduction(3, s);
             break;
@@ -138,18 +106,15 @@ bool State7::transition(Automaton &automaton, Symbole * s) {
         case MULT:
             automaton.decalage(s, new State5);
             break;
-        case INT:
         case FIN:
             automaton.reduction(3, s);
-            break;
-        case ERREUR: 
+            break; 
     }
     return false;
 }
 
 bool State8::transition(Automaton &automaton, Symbole * s) {
     switch(*s) {
-        case OPENPAR:
         case CLOSEPAR:
             automaton.reduction(3, s);
             break;
@@ -159,18 +124,15 @@ bool State8::transition(Automaton &automaton, Symbole * s) {
         case MULT:
             automaton.reduction(3, s);
             break;
-        case INT:
         case FIN:
             automaton.reduction(3, s);
             break;
-        case ERREUR: 
     }
     return false;
 }
 
 bool State9::transition(Automaton &automaton, Symbole * s) {
     switch(*s) {
-        case OPENPAR:
         case CLOSEPAR:
             automaton.reduction(3, s);
             break;
@@ -180,11 +142,9 @@ bool State9::transition(Automaton &automaton, Symbole * s) {
         case MULT:
             automaton.reduction(3, s);
             break;
-        case INT:
         case FIN:
             automaton.reduction(3, s);
             break;
-        case ERREUR: 
     }
     return false;
 }
