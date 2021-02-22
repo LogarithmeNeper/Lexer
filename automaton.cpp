@@ -1,4 +1,4 @@
-#include "Automaton.h"
+#include "automaton.h"
 
 Automaton::Automaton(string s) {
     this->lexer = new Lexer(s);

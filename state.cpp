@@ -1,4 +1,4 @@
-#include "State.h"
+#include "state.h"
 
 bool State0::transition(Automaton &automaton, Symbole * s) {
     switch(*s) {
