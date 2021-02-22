@@ -6,6 +6,7 @@ class State {
         State();
         State(string s);
         ~State();
+        virtual bool transition(Automaton &automaton, Symbol * symb) = 0;
     protected:
 
 };
