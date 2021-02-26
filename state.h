@@ -7,9 +7,9 @@ using namespace std;
 
 class State {
     public:
-        State();
-        State(string s);
-        ~State();
+        State() {};
+        State(string s) {name=s;};
+        ~State() {delete this;};
         virtual bool transition(Automaton &automaton, Symbole* symb) = 0;
     protected:
         string name;

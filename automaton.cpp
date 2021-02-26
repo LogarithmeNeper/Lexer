@@ -1,4 +1,5 @@
 #include "automaton.h"
+#include "state.h"
 
 Automaton::Automaton(string s) {
     this->lexer = new Lexer(s);
