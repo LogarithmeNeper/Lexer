@@ -24,3 +24,14 @@ void Automaton::reduction(int i, Symbole* s) {
 
     // what to do next ?
 }
+
+void Automaton::run() {
+    bool recognized = false;
+    while(!recognized) {
+        Symbole *s = lexer->Consulter();
+        lexer->Avancer();
+        recognized = stackStates.top()->transition(*this,s);
+    }
+    int resultat = stackSymboles.top() ->getValue();
+    cout<<"Resultat : " << resultat<<endl;
+}
