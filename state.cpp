@@ -27,6 +27,7 @@ bool State1::transition(Automaton &automaton, Symbole * s) {
             break;
         case FIN:
             return true;
+            break;
     }
     return false;
 }
@@ -51,16 +52,16 @@ bool State3::transition(Automaton &automaton, Symbole * s) {
     cout<<name<<endl;
     switch(*s) {
         case CLOSEPAR:
-            automaton.reduction(1, s);
+            automaton.reduction(1, new Symbole(CLOSEPAR));
             break;
         case PLUS:
-            automaton.reduction(1, s);
+            automaton.reduction(1, new Symbole(PLUS));
             break;
         case MULT:
-            automaton.reduction(1, s);
+            automaton.reduction(1, new Symbole(MULT));
             break;
         case FIN:
-            automaton.reduction(1, s);
+            automaton.reduction(1, new Symbole(FIN));
             break; 
     }
     return false;
@@ -91,7 +92,7 @@ bool State5::transition(Automaton &automaton, Symbole * s) {
             automaton.decalage(s, new State3);
             break;
         case EXPR:
-            automaton.decalage(s, new State5);
+            automaton.decalage(s, new State8);
             break;
     }
     return false;
@@ -117,16 +118,16 @@ bool State7::transition(Automaton &automaton, Symbole * s) {
     cout<<name<<endl;
     switch(*s) {
         case CLOSEPAR:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(CLOSEPAR));
             break;
         case PLUS:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(PLUS));
             break;
         case MULT:
             automaton.decalage(s, new State5);
             break;
         case FIN:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(FIN));
             break; 
     }
     return false;
@@ -136,16 +137,16 @@ bool State8::transition(Automaton &automaton, Symbole * s) {
     cout<<name<<endl;
     switch(*s) {
         case CLOSEPAR:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(CLOSEPAR));
             break;
         case PLUS:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(PLUS));
             break;
         case MULT:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(MULT));
             break;
         case FIN:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(FIN));
             break;
     }
     return false;
@@ -155,16 +156,16 @@ bool State9::transition(Automaton &automaton, Symbole * s) {
     cout<<name<<endl;
     switch(*s) {
         case CLOSEPAR:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(CLOSEPAR));
             break;
         case PLUS:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(PLUS));
             break;
         case MULT:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(MULT));
             break;
         case FIN:
-            automaton.reduction(3, s);
+            automaton.reduction(3, new Symbole(FIN));
             break;
     }
     return false;

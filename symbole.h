@@ -29,3 +29,12 @@ class Entier : public Symbole {
       int valeur;
 };
 
+class Expression : public Symbole {
+   public:
+      Expression(int v) : Symbole(EXPR), valeur(v) {}
+      ~Expression() {}
+      virtual void Affiche();
+      int getValue();
+   protected :
+      int valeur;
+};

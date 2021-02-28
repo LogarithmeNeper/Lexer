@@ -15,5 +15,13 @@ int Entier::getValue() {
 }
 
 int Symbole::getValue() {
-   return -1;
+   return 0;
+}
+
+int Expression::getValue() {
+   return valeur;
+}
+
+void Expression::Affiche() {
+   Symbole::Affiche();
 }

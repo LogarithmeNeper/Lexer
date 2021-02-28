@@ -1,5 +1,6 @@
 #include "automaton.h"
 #include "state.h"
+#include <iostream>
 
 Automaton::Automaton(string s) {
     this->lexer = new Lexer(s);
@@ -47,8 +48,9 @@ void Automaton::reduction(int i, Symbole* s) {
             }
             break;
     }
+    cout<<"val = " << val <<endl;
     // Transition with the new calculated Symbol
-    stackStates.top()->transition(*this, new Symbole(val));
+    stackStates.top()->transition(*this, new Expression(val));
 }
 
 void Automaton::run() {
