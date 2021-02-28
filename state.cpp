@@ -12,6 +12,9 @@ bool State0::transition(Automaton &automaton, Symbole * s) {
         case EXPR:
             automaton.decalage(s, new State1);
             break;
+        default:
+            automaton.decalage(new Symbole(ERREUR), NULL);
+            return true; // stops the text analysis 
     }
     return false;
 }
@@ -28,6 +31,9 @@ bool State1::transition(Automaton &automaton, Symbole * s) {
         case FIN:
             return true;
             break;
+        default:
+            automaton.decalage(new Symbole(ERREUR), NULL);
+            return true; // stops the text analysis 
     }
     return false;
 }
@@ -44,6 +50,9 @@ bool State2::transition(Automaton &automaton, Symbole * s) {
         case EXPR:
             automaton.decalage(s, new State6);
             break;
+        default:
+            automaton.decalage(new Symbole(ERREUR), NULL);
+            return true; // stops the text analysis 
     }
     return false;
 }
@@ -62,7 +71,10 @@ bool State3::transition(Automaton &automaton, Symbole * s) {
             break;
         case FIN:
             automaton.reduction(1, new Symbole(FIN));
-            break; 
+            break;
+        default:
+            automaton.decalage(new Symbole(ERREUR), NULL);
+            return true; // stops the text analysis 
     }
     return false;
 }
@@ -78,6 +90,9 @@ bool State4::transition(Automaton &automaton, Symbole * s) {
             break;
         case EXPR:
             automaton.decalage(s, new State7);
+        default:
+            automaton.decalage(new Symbole(ERREUR), NULL);
+            return true; // stops the text analysis 
     }
     return false;
 }
@@ -94,6 +109,9 @@ bool State5::transition(Automaton &automaton, Symbole * s) {
         case EXPR:
             automaton.decalage(s, new State8);
             break;
+        default:
+            automaton.decalage(new Symbole(ERREUR), NULL);
+            return true; // stops the text analysis 
     }
     return false;
 }
@@ -110,6 +128,9 @@ bool State6::transition(Automaton &automaton, Symbole * s) {
         case MULT:
             automaton.decalage(s, new State5);
             break;
+        default:
+            automaton.decalage(new Symbole(ERREUR), NULL);
+            return true; // stops the text analysis 
     }
     return false;
 }
@@ -128,7 +149,10 @@ bool State7::transition(Automaton &automaton, Symbole * s) {
             break;
         case FIN:
             automaton.reduction(3, new Symbole(FIN));
-            break; 
+            break;
+        default:
+            automaton.decalage(new Symbole(ERREUR), NULL);
+            return true; // stops the text analysis 
     }
     return false;
 }
@@ -148,6 +172,9 @@ bool State8::transition(Automaton &automaton, Symbole * s) {
         case FIN:
             automaton.reduction(3, new Symbole(FIN));
             break;
+        default:
+            automaton.decalage(new Symbole(ERREUR), NULL);
+            return true; // stops the text analysis 
     }
     return false;
 }
@@ -167,6 +194,9 @@ bool State9::transition(Automaton &automaton, Symbole * s) {
         case FIN:
             automaton.reduction(3, new Symbole(FIN));
             break;
+        default:
+            automaton.decalage(new Symbole(ERREUR), NULL);
+            return true; // stops the text analysis 
     }
     return false;
 }
