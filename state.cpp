@@ -90,6 +90,7 @@ bool State4::transition(Automaton &automaton, Symbole * s) {
             break;
         case EXPR:
             automaton.decalage(s, new State7);
+            break;
         default:
             automaton.decalage(new Symbole(ERREUR), NULL);
             return true; // stops the text analysis 

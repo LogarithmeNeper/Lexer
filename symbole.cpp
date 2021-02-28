@@ -15,7 +15,7 @@ int Entier::getValue() {
 }
 
 int Symbole::getValue() {
-   return 0;
+   return -1;
 }
 
 int Expression::getValue() {
