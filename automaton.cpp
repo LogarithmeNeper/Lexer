@@ -62,6 +62,14 @@ void Automaton::run() {
         lexer->Avancer();
         recognized = stackStates.top()->transition(*this,s);
     }
-    int resultat = stackSymboles.top() ->getValue();
-    cout<<"Resultat : " << resultat<<endl;
+
+    if(*stackSymboles.top()!=ERREUR) {
+        int resultat = stackSymboles.top()->getValue();
+        cout << "Expression reconnue" << endl;
+        cout << "Resultat : " << resultat << endl;
+    }
+    else {
+        cout << "Expression non reconnue, erreur." << endl;
+    }
+    
 }
