@@ -23,12 +23,40 @@ void Automaton::reduction(int i, Symbole* s) {
     int val;
 
     // what to do next ?
+
+    switch(i) {
+        // reduction of rule 5 : E -> val 
+        case 1:
+            val = pile.top()->getValue();
+            break;
+        case 3:
+            // Reduction of rule 4 : E -> (E), stores the EXPR E in val
+            if(*pile.top() == OPENPAR) {
+                pile.pop();
+                val = pile.top()->getValue();
+            } else {
+                val = pile.top()->getValue(); // stores first value of the expression
+                pile.pop();
+                if(*pile.top() == MULT) { // Reduction of rule 3 : E -> E * E
+                    pile.pop(); // Remove symbol
+                    val = val * pile.top()->getValue(); // stores result of the multiplication in val
+                } else if(*pile.top() == PLUS) {  // Reduction of rule 2 : E -> E + E
+                    pile.pop(); // Remove symbol
+                    val = val + pile.top()->getValue(); // stores result of the addition in val
+                }
+            }
+            break;
+    }
+    // Transition with the new calculated Symbol
+    stackStates.top()->transition(*this, new Symbole(val));
 }
 
 void Automaton::run() {
     bool recognized = false;
     while(!recognized) {
         Symbole *s = lexer->Consulter();
+        s->Affiche();
+        cout<<endl;
         lexer->Avancer();
         recognized = stackStates.top()->transition(*this,s);
     }

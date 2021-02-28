@@ -1,6 +1,7 @@
 #include "state.h"
 
 bool State0::transition(Automaton &automaton, Symbole * s) {
+    cout<<name<<endl;
     switch(*s) {
         case OPENPAR:
             automaton.decalage(s, new State2);
@@ -16,6 +17,7 @@ bool State0::transition(Automaton &automaton, Symbole * s) {
 }
 
 bool State1::transition(Automaton &automaton, Symbole * s) {
+    cout<<name<<endl;
     switch(*s) {
         case PLUS:
             automaton.decalage(s, new State4);
@@ -30,6 +32,7 @@ bool State1::transition(Automaton &automaton, Symbole * s) {
 }
 
 bool State2::transition(Automaton &automaton, Symbole * s) {
+    cout<<name<<endl;
     switch(*s) {
         case OPENPAR:
             automaton.decalage(s, new State2);
@@ -45,6 +48,7 @@ bool State2::transition(Automaton &automaton, Symbole * s) {
 }
 
 bool State3::transition(Automaton &automaton, Symbole * s) {
+    cout<<name<<endl;
     switch(*s) {
         case CLOSEPAR:
             automaton.reduction(1, s);
@@ -63,6 +67,7 @@ bool State3::transition(Automaton &automaton, Symbole * s) {
 }
 
 bool State4::transition(Automaton &automaton, Symbole * s) {
+    cout<<name<<endl;
     switch(*s) {
         case OPENPAR:
             automaton.decalage(s, new State2);
@@ -77,6 +82,7 @@ bool State4::transition(Automaton &automaton, Symbole * s) {
 }
 
 bool State5::transition(Automaton &automaton, Symbole * s) {
+    cout<<name<<endl;
     switch(*s) {
         case OPENPAR:
             automaton.decalage(s, new State2);
@@ -92,6 +98,7 @@ bool State5::transition(Automaton &automaton, Symbole * s) {
 }
 
 bool State6::transition(Automaton &automaton, Symbole * s) {
+    cout<<name<<endl;
     switch(*s) {
         case CLOSEPAR:
             automaton.decalage(s, new State9);
@@ -107,6 +114,7 @@ bool State6::transition(Automaton &automaton, Symbole * s) {
 }
 
 bool State7::transition(Automaton &automaton, Symbole * s) {
+    cout<<name<<endl;
     switch(*s) {
         case CLOSEPAR:
             automaton.reduction(3, s);
@@ -125,6 +133,7 @@ bool State7::transition(Automaton &automaton, Symbole * s) {
 }
 
 bool State8::transition(Automaton &automaton, Symbole * s) {
+    cout<<name<<endl;
     switch(*s) {
         case CLOSEPAR:
             automaton.reduction(3, s);
@@ -143,6 +152,7 @@ bool State8::transition(Automaton &automaton, Symbole * s) {
 }
 
 bool State9::transition(Automaton &automaton, Symbole * s) {
+    cout<<name<<endl;
     switch(*s) {
         case CLOSEPAR:
             automaton.reduction(3, s);
