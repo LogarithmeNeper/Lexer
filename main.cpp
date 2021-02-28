@@ -1,18 +1,16 @@
 #include <iostream>
+#include "automaton.h"
 #include "lexer.h"
 
 
 int main(void) {
-   string chaine("(1+34)*123");
-
-   Lexer l(chaine);
-
-   Symbole * s;
-   while(*(s=l.Consulter())!=FIN) {
-      s->Affiche();
-      cout<<endl;
-      l.Avancer();
+   while(true) {
+      string chaine;
+      std::cout << "Insérer la chaîne à analyser" << endl;
+      std::cin >> chaine;
+      Automaton *a = new Automaton(chaine);
+      a->run();
    }
+   
    return 0;
 }
-
