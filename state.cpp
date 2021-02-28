@@ -8,6 +8,9 @@ bool State0::transition(Automaton &automaton, Symbole * s) {
         case INT:
             automaton.decalage(s, new State3);
             break;
+        case EXPR:
+            automaton.decalage(s, new State1);
+            break;
     }
     return false;
 }
@@ -33,6 +36,9 @@ bool State2::transition(Automaton &automaton, Symbole * s) {
             break;
         case INT:
             automaton.decalage(s, new State3);
+            break;
+        case EXPR:
+            automaton.decalage(s, new State6);
             break;
     }
     return false;
@@ -64,6 +70,8 @@ bool State4::transition(Automaton &automaton, Symbole * s) {
         case INT:
             automaton.decalage(s, new State3);
             break;
+        case EXPR:
+            automaton.decalage(s, new State7);
     }
     return false;
 }
@@ -75,6 +83,9 @@ bool State5::transition(Automaton &automaton, Symbole * s) {
             break;
         case INT:
             automaton.decalage(s, new State3);
+            break;
+        case EXPR:
+            automaton.decalage(s, new State5);
             break;
     }
     return false;
