@@ -11,6 +11,5 @@ int main(void) {
       Automaton *a = new Automaton(chaine);
       a->run();
    }
-   
    return 0;
 }
