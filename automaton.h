@@ -14,7 +14,7 @@ class Automaton {
         ~Automaton();
         void decalage(Symbole* s, State* state);
         void reduction(int i, Symbole* s);
-        void run();
+        int run();
     protected:
         Lexer* lexer;
         stack<Symbole*> stackSymboles;

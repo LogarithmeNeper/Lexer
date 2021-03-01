@@ -53,7 +53,8 @@ void Automaton::reduction(int i, Symbole* s) {
     lexer->addSymbol(s);
 }
 
-void Automaton::run() {
+int Automaton::run() {
+    int res;
     bool recognized = false;
     while(!recognized) {
         Symbole *s = lexer->Consulter();
@@ -61,14 +62,10 @@ void Automaton::run() {
         recognized = stackStates.top()->transition(*this,s);
     }
     if(*stackSymboles.top()!=ERREUR) {
-        int resultat = stackSymboles.top()->getValue();
-        cout << "Expression reconnue" << endl;
-        cout << "Resultat : " << resultat << endl;
+        res = stackSymboles.top()->getValue();
     }
     else {
-        cout << "Expression non reconnue, erreur." << endl;
+        res = -1;
     }
-
-    
-    
+    return res;
 }
