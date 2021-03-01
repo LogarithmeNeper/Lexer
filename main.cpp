@@ -9,7 +9,14 @@ int main(void) {
       std::cout << "Insérer la chaîne à analyser" << endl;
       std::cin >> chaine;
       Automaton *a = new Automaton(chaine);
-      a->run();
+      int res=a->run();
+      if(res!=-1) {
+         cout << "Expression reconnue" << endl;
+         cout << "Résultat : " << res << endl;
+      }
+      else {
+         cout << "Expression non reconnue" << endl;
+      }
    }
    return 0;
 }
