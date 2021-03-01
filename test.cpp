@@ -1,15 +1,25 @@
 #include <iostream>
 #include <string>
 #include "automaton.h"
+
+// for UNIX
+#define RESET "\033[0;0m"
+#define BOLD "\033[0;1m"
+#define ITALIC "\033[0;3m"
+#define RED "\033[0;31m"
+#define GREEN "\033[0;32m"
+#define YELLOW "\033[0;33m"
+#define CYAN "\033[0;36m"
+
 using namespace std;
 
 void display(int value, int expected) {
     if(value==expected) {
-        cout << "OK."; 
+        cout << GREEN << "OK." << RESET; 
         
     }
     else {
-        cout << "ERROR";
+        cout << RED << "ERROR" << RESET ;
     }
     cout << " res=" << value << endl;
     cout << "Expected res=" << expected << endl << endl;
