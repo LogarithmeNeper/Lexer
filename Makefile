@@ -1,4 +1,10 @@
-all: compile
+all: 
+	@echo This is a Makefile.
+	@echo Do make compile in order to compile the main program, then use ./main.
+	@echo Do make tests to compile the tests, then use ./tests.
+
+tests: lexer.o automaton.o state.o symbole.o test.o
+	g++ -o tests lexer.o automaton.o state.o symbole.o test.o
 
 compile: lexer.o automaton.o state.o symbole.o main.o
 	g++ -o main lexer.o automaton.o state.o symbole.o main.o
@@ -17,6 +23,9 @@ symbole.o: symbole.cpp symbole.h
 
 main.o: main.cpp
 	g++ -o main.o -c main.cpp
+
+test.o: test.cpp
+	g++ -o test.o -c test.cpp
 
 clean:
 	rm *.o
